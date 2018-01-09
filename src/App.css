@@ -43,6 +43,8 @@
 }
 
 .container label {
+
+  /*transition: color 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);*/
 }
 
 .form {
@@ -70,6 +72,9 @@ input:-webkit-autofill {
 
 .error {
   color: #E55759;
+  /*box-shadow: inset 168px 0 0 0 #498FE1;*/
+  /*transition: box-shadow 2s ease-in-out;*/
+  /*transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);*/
 }
 
 .nextContainer {
@@ -144,7 +149,7 @@ input:-webkit-autofill {
   outline: none;
 }
 
-.middlePage div {
+.middlePage>div {
   margin-bottom: 25px
 }
 

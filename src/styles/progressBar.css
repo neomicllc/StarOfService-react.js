@@ -10,7 +10,8 @@
 .FormStepList-item {
   flex: 1 1 50px;
   text-align: center;
-  list-style: none; }
+  list-style: none;
+  transition: flex 2s; }
   .FormStepList-item:before {
     content: none !important;
     display: none !important; }
@@ -23,7 +24,8 @@
     background: #498FE1;
     color: #fff; }
   .FormStepIcon.is-passed:after {
-    background: #498FE1; }
+    box-shadow: inset 168px 0 0 0 #498FE1;
+    transition: box-shadow 2s ease-in-out; }
   .FormStepIcon.is-passed .FormStepIcon-circle {
     color: #fff; }
   .FormStepIcon:after {

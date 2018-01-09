@@ -5,13 +5,15 @@ import checkCircleGreen from '../check.png'
 
 class LastPage extends Component {
   render() {
-    const {onSubmit} = this.props;
+    const {handleSubmit} = this.props;
 
     return (
-      <div className="lastPageContainer">
-        <img className="success" alt="success" src={checkCircleGreen}/>
-        <button onClick={onSubmit} className="last button">Go to Dashboard &#x2192;</button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="lastPageContainer">
+          <img className="success" alt="success" src={checkCircleGreen}/>
+          <button type="submit" className="last button">Go to Dashboard &#x2192;</button>
+        </div>
+      </form>
     )
   }
 }

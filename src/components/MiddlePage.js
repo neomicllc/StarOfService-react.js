@@ -11,8 +11,9 @@ const renderError = ({label, meta: {touched, error}}) => {
   return touched && error ? <span className="error">{error}</span> : <label>{label}</label>
 };
 
-const renderSelector = ({input, meta: {touched, error}}) => (
+const renderSelector = ({label, input, meta: {touched, error}}) => (
   <div>
+    {touched && error ? <span className="error">{error}</span> : <label>{label}</label>}
     <select {...input}>
       <option value=""/>
       {choices.map(val => (
@@ -86,8 +87,7 @@ class MiddlePage extends Component {
             </div>
           </div>
           <div>
-            <label>WHERE DID YOU HEAR ABOUT US?</label>
-            <Field name="select" component={renderSelector}/>
+            <Field name="select" label="WHERE DID YOU HEAR ABOUT US?" component={renderSelector}/>
           </div>
         </div>
         <div className="buttonContainer">

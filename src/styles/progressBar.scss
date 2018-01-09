@@ -12,6 +12,7 @@
   flex: 1 1 50px;
   text-align: center;
   list-style: none;
+  transition: flex 2s;
 
   &:before {
     content: none !important;
@@ -35,7 +36,9 @@
 
   &.is-passed {
     &:after {
-      background: #498FE1;
+      //background: #498FE1;
+      box-shadow: inset 168px 0 0 0 #498FE1;
+      transition: box-shadow 2s ease-in-out;
     }
 
     .FormStepIcon-circle {

@@ -1,15 +1,30 @@
+import moment from 'moment';
+
 const validate = values => {
-  const errors = {}
+  const errors = {};
   const minLength = min => value =>
     value && value.length < min ? `Must be ${min} characters or more` : undefined
   const minLength6 = minLength(6);
   const dateNow = new Date();
   const newDate = dateNow.getFullYear();
-  console.log('date', newDate);
-  console.log(values.DD + ' ' + values.MM + ' ' + values.YYYY);
+
   function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
   }
+
+  const dateOfBirth = values.DD + '/' + values.MM + '/' + values.YYYY;
+  // console.log('dateOfBirth', isValidDate(dateOfBirth));
+
+  function isValidDate(str) {
+    var d = moment(str,'D/M/YYYY');
+    if(d == null || !d.isValid()) return false;
+
+    return str.indexOf(d.format('D/M/YYYY')) >= 0
+      || str.indexOf(d.format('DD/MM/YYYY')) >= 0
+      || str.indexOf(d.format('D/M/YY')) >= 0
+      || str.indexOf(d.format('DD/MM/YY')) >= 0;
+  }
+
   if (!values.email) {
     errors.email = 'EMAIL IS REQUIRED'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -37,6 +52,9 @@ const validate = values => {
     errors.dateOfBirth = 'YOU ARE TOO YOUNG'
   } else if ((newDate - values.YYYY) >= 100) {
     errors.dateOfBirth = 'YOU ARE TOO OLD'
+  }
+  else if (!isValidDate(dateOfBirth)) {
+    errors.dateOfBirth = 'INVALID DATE'
   }
   if (!values.gender) {
     errors.gender = 'GENDER IS REQUIRED'
