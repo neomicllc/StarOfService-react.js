@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
 import App from './App';
+import MainRouter from './components/MainRouter';
 
 const reducer = combineReducers({
   form: reduxFormReducer
@@ -24,7 +25,7 @@ const store = (window.devToolsExtension
 
 render(
   <Provider store={store}>
-    <App />
+    <MainRouter />
   </Provider>,
   document.getElementById('root')
 );

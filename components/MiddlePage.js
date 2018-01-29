@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Field, reduxForm} from 'redux-form'
 import validate from './validate'
-import '../styles/flexbox.css';
+import Head from 'next/head'
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
@@ -10,12 +10,11 @@ const styles = {
     animation: 'x 1s',
     animationName: Radium.keyframes(fadeIn, 'fadeIn')
   }
-}
+};
 
-const choices = ['Internet', 'Press', 'TV', 'Friends'];
+const choices = ['internet', 'press', 'tv', 'friends'];
 
 const renderError = ({label, meta: {touched, error}}) => {
-
   return touched && error ? <span className="error">{error}</span> : <label>{label}</label>
 };
 
@@ -30,7 +29,6 @@ const renderSelector = ({label, input, meta: {touched, error}}) => (
         </option>
       ))}
     </select>
-    {/*{touched && error && <span>{error}</span>}*/}
   </div>
 );
 
@@ -40,7 +38,12 @@ class MiddlePage extends Component {
 
     return (
       <StyleRoot>
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="form" autoComplete="off">
+          <Head>
+            <title>My styled page</title>
+            <link href="../static/progressBar.css" rel="stylesheet"/>
+            <link href="../static/flexbox.css" rel="stylesheet"/>
+          </Head>
           <div className="middlePage" style={styles.fadeIn}>
             <div>
               <Field name='dateOfBirth' label="DATE OF BIRTH" component={renderError}/>

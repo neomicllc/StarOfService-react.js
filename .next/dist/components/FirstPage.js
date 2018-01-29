@@ -38,10 +38,23 @@ var _validate = require('./validate');
 
 var _validate2 = _interopRequireDefault(_validate);
 
+var _reactAnimations = require('react-animations');
+
+var _radium = require('radium');
+
+var _radium2 = _interopRequireDefault(_radium);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = 'D:\\Projects\\StarOfService-react.js\\pages\\components\\FirstPage.js';
+var _jsxFileName = 'D:\\Projects\\StarOfService-react.js\\components\\FirstPage.js';
 
+
+// const styles = {
+//   slideInRight: {
+//     animation: 'x 1s',
+//     animationName: Radium.keyframes(fadeIn, 'fadeIn')
+//   }
+// };
 
 var FirstPage = function (_Component) {
   (0, _inherits3.default)(FirstPage, _Component);
@@ -57,13 +70,13 @@ var FirstPage = function (_Component) {
     value: function render() {
       var handleSubmit = this.props.handleSubmit;
 
-      return _react2.default.createElement('form', { onSubmit: handleSubmit, className: 'form', __source: {
+      return _react2.default.createElement('form', { onSubmit: handleSubmit, className: 'form', autoComplete: 'off', __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 20
         }
       }, _react2.default.createElement('div', { className: 'inputContainer', __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 21
         }
       }, _react2.default.createElement(_reduxForm.Field, {
         name: 'email',
@@ -73,7 +86,7 @@ var FirstPage = function (_Component) {
         className: 'input',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 22
         }
       }), _react2.default.createElement(_reduxForm.Field, {
         name: 'password',
@@ -83,7 +96,7 @@ var FirstPage = function (_Component) {
         className: 'input',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 29
         }
       }), _react2.default.createElement(_reduxForm.Field, {
         name: 'confirmPassword',
@@ -93,15 +106,15 @@ var FirstPage = function (_Component) {
         className: 'input',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 36
         }
       })), _react2.default.createElement('div', { className: 'nextContainer', __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 44
         }
       }, _react2.default.createElement('button', { type: 'submit', className: 'next button', __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 45
         }
       }, 'Next \u2192')));
     }
@@ -116,4 +129,4 @@ exports.default = (0, _reduxForm.reduxForm)({
   forceUnregisterOnUnmount: true,
   validate: _validate2.default
 })(FirstPage);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFxjb21wb25lbnRzXFxGaXJzdFBhZ2UuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJDb21wb25lbnQiLCJGaWVsZCIsInJlZHV4Rm9ybSIsImlucHV0UmVuZGVyIiwidmFsaWRhdGUiLCJGaXJzdFBhZ2UiLCJoYW5kbGVTdWJtaXQiLCJwcm9wcyIsImZvcm0iLCJkZXN0cm95T25Vbm1vdW50IiwiZm9yY2VVbnJlZ2lzdGVyT25Vbm1vdW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU8sQUFBUTs7OztBQUNmLEFBQVEsQUFBTzs7QUFDZixBQUFPLEFBQWlCOzs7O0FBQ3hCLEFBQU8sQUFBYzs7Ozs7Ozs7O0lBRWYsQTs7Ozs7Ozs7Ozs7NkJBQ0s7VUFBQSxBQUNBLGVBQWdCLEtBRGhCLEFBQ3FCLE1BRHJCLEFBQ0EsQUFFUDs7NkJBQ0UsY0FBQSxVQUFNLFVBQU4sQUFBZ0IsY0FBYyxXQUE5QixBQUF3QztvQkFBeEM7c0JBQUEsQUFDRTtBQURGO09BQUEsa0JBQ0UsY0FBQSxTQUFLLFdBQUwsQUFBZTtvQkFBZjtzQkFBQSxBQUNFO0FBREY7eUJBQ0UsQUFBQztjQUFELEFBQ08sQUFDTDtjQUZGLEFBRU8sQUFDTDtBQUhGLEFBR2EsQUFDWDtlQUpGLEFBSVEsQUFDTjttQkFMRixBQUtZOztvQkFMWjtzQkFERixBQUNFLEFBT0E7QUFQQTtBQUNFLDBCQU1GLEFBQUM7Y0FBRCxBQUNPLEFBQ0w7Y0FGRixBQUVPLEFBQ0w7QUFIRixBQUdhLEFBQ1g7ZUFKRixBQUlRLEFBQ047bUJBTEYsQUFLWTs7b0JBTFo7c0JBUkYsQUFRRSxBQU9BO0FBUEE7QUFDRSwwQkFNRixBQUFDO2NBQUQsQUFDTyxBQUNMO2NBRkYsQUFFTyxBQUNMO0FBSEYsQUFHYSxBQUNYO2VBSkYsQUFJUSxBQUNOO21CQUxGLEFBS1k7O29CQUxaO3NCQWhCSixBQUNFLEFBZUUsQUFRRjtBQVJFO0FBQ0UsMkJBT0osY0FBQSxTQUFLLFdBQUwsQUFBZTtvQkFBZjtzQkFBQSxBQUNFO0FBREY7eUJBQ0UsY0FBQSxZQUFRLE1BQVIsQUFBYSxVQUFTLFdBQXRCLEFBQWdDO29CQUFoQztzQkFBQTtBQUFBO1NBMUJOLEFBQ0UsQUF3QkUsQUFDRSxBQU1QOzs7OztBQXBDcUIsQSxBQXVDeEI7OztRQUF5QixBQUNqQixBQUNOO29CQUZ1QixBQUVMLEFBQ2xCOzRCQUh1QixBQUdHLEFBQzFCO0FBSmEsQUFBVTtBQUFBLEFBQ3ZCLENBRGEsRUFBZixBQUFlLEFBS1oiLCJmaWxlIjoiRmlyc3RQYWdlLmpzIiwic291cmNlUm9vdCI6IkQ6L1Byb2plY3RzL1N0YXJPZlNlcnZpY2UtcmVhY3QuanMifQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHNcXEZpcnN0UGFnZS5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIkNvbXBvbmVudCIsIkZpZWxkIiwicmVkdXhGb3JtIiwiaW5wdXRSZW5kZXIiLCJ2YWxpZGF0ZSIsImZhZGVJbiIsIlJhZGl1bSIsIlN0eWxlUm9vdCIsIkZpcnN0UGFnZSIsImhhbmRsZVN1Ym1pdCIsInByb3BzIiwiZm9ybSIsImRlc3Ryb3lPblVubW91bnQiLCJmb3JjZVVucmVnaXN0ZXJPblVubW91bnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTyxBQUFROzs7O0FBQ2YsQUFBUSxBQUFPOztBQUNmLEFBQU8sQUFBaUI7Ozs7QUFDeEIsQUFBTyxBQUFjOzs7O0FBQ3JCLEFBQVE7O0FBQ1IsQUFBTyxBQUFTOzs7Ozs7Ozs7QUFFaEI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztJQUVNLEE7Ozs7Ozs7Ozs7OzZCQUNLO1VBQUEsQUFDQSxlQUFnQixLQURoQixBQUNxQixNQURyQixBQUNBLEFBRVA7OzZCQUNFLGNBQUEsVUFBTSxVQUFOLEFBQWdCLGNBQWMsV0FBOUIsQUFBd0MsUUFBTyxjQUEvQyxBQUE0RDtvQkFBNUQ7c0JBQUEsQUFDRTtBQURGO09BQUEsa0JBQ0UsY0FBQSxTQUFLLFdBQUwsQUFBZTtvQkFBZjtzQkFBQSxBQUNFO0FBREY7eUJBQ0UsQUFBQztjQUFELEFBQ08sQUFDTDtjQUZGLEFBRU8sQUFDTDtBQUhGLEFBR2EsQUFDWDtlQUpGLEFBSVEsQUFDTjttQkFMRixBQUtZOztvQkFMWjtzQkFERixBQUNFLEFBT0E7QUFQQTtBQUNFLDBCQU1GLEFBQUM7Y0FBRCxBQUNPLEFBQ0w7Y0FGRixBQUVPLEFBQ0w7QUFIRixBQUdhLEFBQ1g7ZUFKRixBQUlRLEFBQ047bUJBTEYsQUFLWTs7b0JBTFo7c0JBUkYsQUFRRSxBQU9BO0FBUEE7QUFDRSwwQkFNRixBQUFDO2NBQUQsQUFDTyxBQUNMO2NBRkYsQUFFTyxBQUNMO0FBSEYsQUFHYSxBQUNYO2VBSkYsQUFJUSxBQUNOO21CQUxGLEFBS1k7O29CQUxaO3NCQWhCSixBQUNFLEFBZUUsQUFRRjtBQVJFO0FBQ0UsMkJBT0osY0FBQSxTQUFLLFdBQUwsQUFBZTtvQkFBZjtzQkFBQSxBQUNFO0FBREY7eUJBQ0UsY0FBQSxZQUFRLE1BQVIsQUFBYSxVQUFTLFdBQXRCLEFBQWdDO29CQUFoQztzQkFBQTtBQUFBO1NBMUJOLEFBQ0UsQUF3QkUsQUFDRSxBQU1QOzs7OztBQXBDcUIsQSxBQXVDeEI7OztRQUF5QixBQUNqQixBQUNOO29CQUZ1QixBQUVMLEFBQ2xCOzRCQUh1QixBQUdHLEFBQzFCO0FBSmEsQUFBVTtBQUFBLEFBQ3ZCLENBRGEsRUFBZixBQUFlLEFBS1oiLCJmaWxlIjoiRmlyc3RQYWdlLmpzIiwic291cmNlUm9vdCI6IkQ6L1Byb2plY3RzL1N0YXJPZlNlcnZpY2UtcmVhY3QuanMifQ==

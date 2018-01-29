@@ -16,8 +16,8 @@ const validate = values => {
   // console.log('dateOfBirth', isValidDate(dateOfBirth));
 
   function isValidDate(str) {
-    let d = moment(str,'D/M/YYYY');
-    if(d === null || !d.isValid()) return false;
+    var d = moment(str,'D/M/YYYY');
+    if(d == null || !d.isValid()) return false;
 
     return str.indexOf(d.format('D/M/YYYY')) >= 0
       || str.indexOf(d.format('DD/MM/YYYY')) >= 0

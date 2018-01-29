@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import FirstPage from './FirstPage'
 import MiddlePage from './MiddlePage'
 import LastPage from './LastPage'
-import MainRouter from './MainRouter'
-import '../styles/progressBar.css'
+import Head from 'next/head'
 import {slideInRight} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
@@ -44,31 +43,36 @@ class Form extends Component {
 
     return (
       <StyleRoot>
-      <div className="container" style={styles.slideInRight}>
-        <h2>{page === 3 ? 'Thank You!' : 'Signup'}</h2>
-        <ol className="FormStepList">
-          <li className="FormStepList-item">
+        <Head>
+          <title>Star of Service</title>
+          <link href="../static/progressBar.css" rel="stylesheet"/>
+        </Head>
+        <div className="container" style={styles.slideInRight}>
+          <h2>{page === 3 ? 'Thank You!' : 'Signup'}</h2>
+          <ol className="FormStepList">
+            <li className="FormStepList-item">
             <span className={page === 1 ? "FormStepIcon is-active && is-passed" : "FormStepIcon is-passed"}>
-              <span className="FormStepIcon-circle" />
+              <span className="FormStepIcon-circle"/>
             </span>
-          </li>
-          <li className="FormStepList-item">
+            </li>
+            <li className="FormStepList-item">
             <span className={page === 1 ? "FormStepIcon is-active" : "FormStepIcon is-passed"}>
-              <span className="FormStepIcon-circle" />
+              <span className="FormStepIcon-circle"/>
             </span>
-          </li>
-          <li className="FormStepList-item">
-            <span className={page === 2 && "FormStepIcon is-active" || page === 1 && 'FormStepIcon' || page === 3 && 'FormStepIcon is-passed'}>
-              <span className="FormStepIcon-circle" />
+            </li>
+            <li className="FormStepList-item">
+            <span
+              className={page === 2 && "FormStepIcon is-active" || page === 1 && 'FormStepIcon' || page === 3 && 'FormStepIcon is-passed'}>
+              <span className="FormStepIcon-circle"/>
             </span>
-          </li>
-        </ol>
+            </li>
+          </ol>
 
           {page === 1 && <FirstPage onSubmit={this.nextPage}/>}
           {page === 2 && <MiddlePage onSubmit={this.nextPage} previousPage={this.previousPage}/>}
           {page === 3 && <LastPage onSubmit={onSubmit} previousPage={this.previousPage}/>}
 
-      </div>
+        </div>
       </StyleRoot>
     )
   }
@@ -76,6 +80,6 @@ class Form extends Component {
 
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired
-};
+}
 
 export default Form;

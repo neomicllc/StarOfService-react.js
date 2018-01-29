@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import './App.css';
-import Form from './components/Form'
+import Head from 'next/head'
+import Form from './Form'
 
 const showResults = values =>
   new Promise(resolve => {
@@ -16,6 +16,11 @@ class App extends Component {
     console.log(this.props.values);
     return (
       <div className="App">
+        <Head>
+          <title>My styled page</title>
+          <link href="../static/App.css" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        </Head>
         <Form onSubmit={showResults}/>
       </div>
     );

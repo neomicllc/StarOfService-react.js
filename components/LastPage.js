@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {reduxForm} from 'redux-form'
 import validate from './validate'
-import checkCircleGreen from '../check.png'
 import {fadeIn, zoomIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
@@ -22,9 +21,9 @@ class LastPage extends Component {
 
     return (
       <StyleRoot>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <div className="lastPageContainer" style={styles.fadeIn}>
-          <img className="success" alt="success" src={checkCircleGreen} style={styles.zoomIn}/>
+          <img className="success" alt="success" src='../static/check.png' style={styles.zoomIn}/>
           <button type="submit" className="last button">Go to Dashboard &#x2192;</button>
         </div>
       </form>

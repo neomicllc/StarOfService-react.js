@@ -1,0 +1,55 @@
+.FormStepList {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  height: 7px;
+  border: 1px solid grey; }
+
+.FormStepList-item {
+  flex: 1 1 50px;
+  text-align: center;
+  list-style: none;
+  transition: flex 2s; }
+.FormStepList-item:before {
+  content: none !important;
+  display: none !important; }
+
+.FormStepIcon {
+  display: inline-block;
+  text-align: center;
+  position: relative; }
+.FormStepIcon.is-active .FormStepIcon-circle {
+  background: #498FE1;
+  color: #fff; }
+.FormStepIcon.is-passed:after {
+  box-shadow: inset 168px 0 0 0 #498FE1;
+  transition: box-shadow 2s ease-in-out; }
+.FormStepIcon.is-passed .FormStepIcon-circle {
+  color: #fff; }
+.FormStepIcon:after {
+  content: '';
+  background: #fff;
+  position: absolute;
+  right: -1000%;
+  height: 8px;
+  z-index: 1;
+  width: 504px; }
+.FormStepIcon.FormStepIcon--last:after {
+  background: #fff; }
+
+.FormStepIcon-circle {
+  background: #D4D4D4;
+  color: #A9A9A9;
+  font-weight: bold;
+  width: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2; }
+
+.FormStepIcon-title {
+  display: block;
+  font-size: 0.7em;
+  margin-top: 0.5em; }
